@@ -1,6 +1,6 @@
 const cards = [
     {
-        theme: "green",
+        theme: "blue",
         top_label: "More than",
         value: "£12,000,000",
         bottom_label: "delighted guests",
