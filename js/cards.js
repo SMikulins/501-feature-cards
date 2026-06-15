@@ -34,7 +34,7 @@ const container = document.querySelector('.cards');
         const element = document.createElement('article');
         element.className = `card theme-${card.theme}`;
         element.innerHTML = `
-            <div class="card-content ">
+            <div class="card-content">
                 <p>${card.top_label}</p>
                 <p class="hero">${card.value}</p>
                 <p>${card.bottom_label}</p>
