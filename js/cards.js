@@ -40,7 +40,7 @@ const container = document.querySelector('.cards');
                 <p>${card.bottom_label}</p>
             </div>
             
-            ${svg}
+            <div class="card-icon" aria-hidden="true">${svg}</div>
         `;
         return element;
     }));
