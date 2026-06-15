@@ -28,7 +28,9 @@ const container = document.querySelector('.cards');
     if (!container) return;
 
     const elements = await Promise.all(cards.map(async (card) => {
-        const svg = await fetch(`assets/img/${card.image}.svg`).then(r => r.text());
+        const response = await fetch(`assets/img/${card.image}.svg`);
+        if (!response.ok) throw new Error(`Failed to load ${card.image}.svg`);
+        const svg = await response.text();
         const element = document.createElement('article');
         element.className = `card theme-${card.theme}`;
         element.innerHTML = `
