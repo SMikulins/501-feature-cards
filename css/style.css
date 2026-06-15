@@ -1,0 +1,115 @@
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('../assets/fonts/ProximaNova-Semibold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('../assets/fonts/ProximaNova-Extrabold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+
+body {
+    font-family: 'ProximaNova', sans-serif;
+    margin: 0;
+    background-color: #2d004b;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+    margin: 0px;
+    letter-spacing: -.02em;
+}
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px;
+    display: flex;
+
+    @media (max-width: 640px) {
+        padding: 20px;
+    }
+}
+
+.card {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 24px 24px 0 24px;
+}
+
+.card p {
+    font-size: 20px;
+    font-weight: 600;
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+    }
+}
+
+.card .hero {
+    font-weight: 800;
+    font-size: clamp(2.375rem, 2.0341rem + 1.7045vw, 3.125rem);
+    word-wrap: break-word;  
+}
+
+.card-icon svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.card:nth-child(odd) {
+    transform: rotate(1deg);
+}
+
+.card:nth-child(even) {
+    transform: rotate(-1deg);
+}
+
+.card.theme-green {
+    background-color: #2efe00;
+    color: #064000;
+}
+
+.card.theme-pink {
+    background-color: #e90ab8;
+    color: #400134;
+}
+
+.card.theme-blue {
+    background-color: #0188ff;
+    color: #00223f;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (max-width: 640px) {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
