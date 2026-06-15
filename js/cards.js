@@ -36,7 +36,7 @@ const container = document.querySelector('.cards');
         element.innerHTML = `
             <div class="card-content">
                 <p>${card.top_label}</p>
-                <p class="hero">${card.value}</p>
+                <h2 class="hero">${card.value}</h2>
                 <p>${card.bottom_label}</p>
             </div>
             
