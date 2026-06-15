@@ -25,6 +25,8 @@ const cards = [
 const container = document.querySelector('.cards');
 
 (async () => {
+    if (!container) return;
+
     const elements = await Promise.all(cards.map(async (card) => {
         const svg = await fetch(`assets/img/${card.image}.svg`).then(r => r.text());
         const element = document.createElement('article');
