@@ -24,21 +24,22 @@ const cards = [
 
 const container = document.querySelector('.cards');
 
-cards.forEach( async (card) => {
-    const element = document.createElement('article');
-    element.className = `card theme-${card.theme}`;
-    const svg = await fetch(`assets/img/${card.image}.svg`).then(r => r.text());
+(async () => {
+    const elements = await Promise.all(cards.map(async (card) => {
+        const svg = await fetch(`assets/img/${card.image}.svg`).then(r => r.text());
+        const element = document.createElement('article');
+        element.className = `card theme-${card.theme}`;
+        element.innerHTML = `
+            <div class="card-content ">
+                <p>${card.top_label}</p>
+                <p class="hero">${card.value}</p>
+                <p>${card.bottom_label}</p>
+            </div>
+            
+            ${svg}
+        `;
+        return element;
+    }));
 
-    element.className = `card theme-${card.theme}`;
-    element.innerHTML = `
-        <div class="card-content ">
-            <p>${card.top_label}</p>
-            <p class="hero">${card.value}</p>
-            <p>${card.bottom_label}</p>
-        </div>
-        
-        ${svg}
-    `;
-
-    container.appendChild(element);
-});
+    elements.forEach((element) => container.appendChild(element));
+})();
