@@ -2,8 +2,8 @@
 A reusable, accessible, responsive, CMS-agnostic Feature Cards / CTA module for a marketing landing page. Built with vanilla HTML, CSS, and JavaScript.
 
 ## Links
-Live demo: https://smikulins.github.io/501-feature-cards/
-Repository: https://github.com/SMikulins/501-feature-cards
+- **Live demo:** https://smikulins.github.io/501-feature-cards/
+- **Repository:** https://github.com/SMikulins/501-feature-cards
 
 ## Features
 - Semantic, accessible HTML (`<section>`, `<article>`, headings, ARIA labels)
